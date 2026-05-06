@@ -1,0 +1,37 @@
+[project]
+name = "zensical-wavedrom-plugin"
+version = "0.1.0"
+description = "A Zensical extension for rendering WaveDrom diagrams in Markdown"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Jiajie Chen", email = "c@jia.je" },
+]
+keywords = ["zensical", "markdown", "wavedrom"]
+dependencies = [
+    "beautifulsoup4>=4.6",
+    "markdown>=3.7",
+    "wavedrom>=2.0.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0.3",
+]
+
+[project.entry-points."markdown.extensions"]
+wavedrom = "zensical_wavedrom_plugin.extension:WavedromExtension"
+
+[project.urls]
+Homepage = "https://github.com/jiegec/zensical-wavedrom-plugin"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["zensical_wavedrom_plugin"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

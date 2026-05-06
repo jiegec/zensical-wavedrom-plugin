@@ -1,0 +1,6 @@
+[project]
+site_name = "WaveDrom Default"
+
+[project.markdown_extensions.fenced_code]
+[project.markdown_extensions.wavedrom]
+embed_svg = false

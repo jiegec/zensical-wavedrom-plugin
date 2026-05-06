@@ -1,0 +1,9 @@
+[project]
+site_name = "WaveDrom Pymdownx Embed SVG"
+
+[project.markdown_extensions.pymdownx.superfences]
+custom_fences = [
+  { name = "wavedrom", class = "wavedrom", format = "zensical_wavedrom_plugin.extension.fence_wavedrom_format" }
+]
+[project.markdown_extensions.wavedrom]
+embed_svg = true

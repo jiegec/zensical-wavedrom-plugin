@@ -1,0 +1,20 @@
+[project]
+site_name = "WaveDrom Demo"
+site_description = "A demo project showcasing the zensical-wavedrom-plugin."
+site_url = "https://jia.je/zensical-wavedrom-plugin"
+
+nav = [
+  { "Home" = "index.md" },
+]
+extra_javascript = [
+  "https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.1.0/skins/default.js",
+  "https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.1.0/wavedrom.min.js"
+]
+
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.pymdownx.superfences]
+custom_fences = [
+  { name = "wavedrom", class = "wavedrom", format = "zensical_wavedrom_plugin.extension.fence_wavedrom_format" }
+]
+[project.markdown_extensions.wavedrom]
+embed_svg = false
