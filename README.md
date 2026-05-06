@@ -22,12 +22,16 @@ Add to your `zensical.toml`:
 
 ### Default mode (JavaScript rendering)
 
+In default mode, WaveDrom code blocks are transformed into `<script type="WaveDrom">` tags and the WaveDrom JavaScript library processes them on page load.
+
 ```toml
 [project.markdown_extensions.fenced_code]
 [project.markdown_extensions.wavedrom]
 ```
 
 ### Embed SVG mode
+
+When `embed_svg = true` is set, WaveDrom diagrams are rendered to SVG at build time. This means no JavaScript is required on the client side.
 
 ```toml
 [project.markdown_extensions.fenced_code]
@@ -37,7 +41,9 @@ embed_svg = true
 
 ### Pymdownx Integration
 
-```yaml
+This plugin integrates with `pymdownx.superfences` to provide custom fence support when `pymdownx` is used instead of `fenced_code`.
+
+```toml
 [project.markdown_extensions.pymdownx.superfences]
 custom_fences = [
   { name = "wavedrom", class = "wavedrom", format = "zensical_wavedrom_plugin.extension.fence_wavedrom_format" }
