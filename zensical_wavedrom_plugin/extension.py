@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from html import escape
 from typing import TYPE_CHECKING
 
 import wavedrom
@@ -18,14 +19,6 @@ _WAVEDROM_INIT_SCRIPT = (
 )
 
 
-def _escape(txt: str) -> str:
-    """Basic html escaping."""
-    txt = txt.replace("&", "&amp;")
-    txt = txt.replace("<", "&lt;")
-    txt = txt.replace(">", "&gt;")
-    return txt
-
-
 def fence_wavedrom_format(
     source: str,
     language: str,
@@ -35,7 +28,7 @@ def fence_wavedrom_format(
     **kwargs: object,
 ) -> str:
     """Format wavedrom fence for pymdownx.superfences."""
-    return '<script type="WaveDrom">%s</script>' % (_escape(source))
+    return '<script type="WaveDrom">%s</script>' % (escape(source, quote=False))
 
 
 class WavedromPostprocessor(Postprocessor):

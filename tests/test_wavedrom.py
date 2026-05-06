@@ -1,34 +1,35 @@
 from __future__ import annotations
 
+from html import escape
+
 import pytest
 from markdown import Markdown
 
 from zensical_wavedrom_plugin.extension import (
     WavedromExtension,
     WavedromPostprocessor,
-    _escape,
     fence_wavedrom_format,
 )
 
 
 class TestEscape:
     def test_ampersand(self) -> None:
-        assert _escape("a&b") == "a&amp;b"
+        assert escape("a&b") == "a&amp;b"
 
     def test_lt(self) -> None:
-        assert _escape("a<b") == "a&lt;b"
+        assert escape("a<b") == "a&lt;b"
 
     def test_gt(self) -> None:
-        assert _escape("a>b") == "a&gt;b"
+        assert escape("a>b") == "a&gt;b"
 
     def test_combined(self) -> None:
-        assert _escape("a&b<c>d") == "a&amp;b&lt;c&gt;d"
+        assert escape("a&b<c>d") == "a&amp;b&lt;c&gt;d"
 
     def test_no_special(self) -> None:
-        assert _escape("abc") == "abc"
+        assert escape("abc") == "abc"
 
     def test_empty(self) -> None:
-        assert _escape("") == ""
+        assert escape("") == ""
 
 
 class TestFenceWavedromFormat:
