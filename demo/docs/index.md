@@ -11,6 +11,11 @@ WaveDrom is a digital timing diagram rendering engine that uses a simple JSON-ba
 In default mode, WaveDrom code blocks are transformed into `<script type="WaveDrom">` tags and the WaveDrom JavaScript library processes them on page load. Add to your `zensical.toml`:
 
 ```toml
+[project]
+extra_javascript = [
+  "https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/skins/default.js",
+  "https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/wavedrom.min.js"
+]
 [project.markdown_extensions.fenced_code]
 [project.markdown_extensions.wavedrom]
 ```

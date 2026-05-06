@@ -27,6 +27,11 @@ Add to your `zensical.toml`:
 In default mode, WaveDrom code blocks are transformed into `<script type="WaveDrom">` tags and the WaveDrom JavaScript library processes them on page load.
 
 ```toml
+[project]
+extra_javascript = [
+  "https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/skins/default.js",
+  "https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/wavedrom.min.js"
+]
 [project.markdown_extensions.fenced_code]
 [project.markdown_extensions.wavedrom]
 ```

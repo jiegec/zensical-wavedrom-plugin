@@ -7,9 +7,13 @@ nav = [
   { "Home" = "index.md" },
 ]
 extra_javascript = [
-  "https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.1.0/skins/default.js",
-  "https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.1.0/wavedrom.min.js"
+  "https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/skins/default.js",
+  "https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/wavedrom.min.js"
 ]
+
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/jiegec/zensical-wavedrom-plugin"
 
 [project.markdown_extensions.admonition]
 [project.markdown_extensions.pymdownx.superfences]
