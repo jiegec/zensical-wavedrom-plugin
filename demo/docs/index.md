@@ -1,6 +1,6 @@
 # WaveDrom Plugin Demo
 
-Welcome to the **zensical-wavedrom-plugin** demo project! This project demonstrates how to render [WaveDrom](https://wavedrom.com/) digital timing diagrams in your Zensical documentation.
+Welcome to the **zensical-wavedrom-plugin** demo project! This project demonstrates how to render [WaveDrom](https://wavedrom.com/) digital timing diagrams in your Zensical documentation. Source code of this demo can be found in [the repo](https://github.com/jiegec/zensical-wavedrom-plugin/tree/master/demo).
 
 ## What is WaveDrom?
 

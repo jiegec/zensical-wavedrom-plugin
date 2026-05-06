@@ -2,7 +2,7 @@
 
 [![PyPI](https://badge.fury.io/py/zensical-wavedrom-plugin.svg)](https://pypi.org/project/zensical-wavedrom-plugin/)
 
-A Zensical extension for rendering [WaveDrom](https://wavedrom.com/) diagrams in Markdown.
+A Zensical extension for rendering [WaveDrom](https://wavedrom.com/) diagrams in Markdown. Visit the [demo site](https://jia.je/zensical-wavedrom-plugin).
 
 This is a port of the [mkdocs-wavedrom-plugin](https://github.com/kuri65536/mkdocs-wavedrom-plugin) (or, my [maintained fork](https://github.com/jiegec/mkdocs-wavedrom-plugin)) for the Zensical static site generator.
 
