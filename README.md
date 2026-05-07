@@ -2,11 +2,9 @@
 
 [![PyPI](https://badge.fury.io/py/zensical-wavedrom-plugin.svg)](https://pypi.org/project/zensical-wavedrom-plugin/)
 
-A Zensical extension for rendering [WaveDrom](https://wavedrom.com/) diagrams in Markdown. Visit the [demo site](https://jia.je/zensical-wavedrom-plugin).
+A Markdown extension for rendering [WaveDrom](https://wavedrom.com/) digital timing diagrams, ported from [mkdocs-wavedrom-plugin](https://github.com/kuri65536/mkdocs-wavedrom-plugin) (or, my [maintained fork](https://github.com/jiegec/mkdocs-wavedrom-plugin)). Visit the [demo site](https://jia.je/zensical-wavedrom-plugin).
 
-This is a port of the [mkdocs-wavedrom-plugin](https://github.com/kuri65536/mkdocs-wavedrom-plugin) (or, my [maintained fork](https://github.com/jiegec/mkdocs-wavedrom-plugin)) for the Zensical static site generator.
-
-Since this plugin is registered as a `markdown.extensions` entry point, it also works out of the box with [MkDocs](https://www.mkdocs.org/).
+This plugin is registered as a `markdown.extensions` entry point, so it works with any [Python-Markdown](https://github.com/Python-Markdown/markdown)-based static site generator, including [Zensical](https://github.com/zensical/zensical) and [MkDocs](https://www.mkdocs.org/).
 
 ## Features
 
@@ -22,7 +20,7 @@ pip install zensical-wavedrom-plugin
 
 ## Usage
 
-Add wavedrom diagrams to your Markdown files:
+In your Markdown files:
 
 ````markdown
 ```wavedrom
@@ -33,13 +31,13 @@ Add wavedrom diagrams to your Markdown files:
 ```
 ````
 
-Then setup Zensical or Mkdocs according to the instructions below.
+## Configuration
 
-## Zensical Configuration
+### Zensical
 
 Add to your `zensical.toml`:
 
-### Default mode (JavaScript rendering)
+#### Default mode (JavaScript rendering)
 
 In default mode, WaveDrom code blocks are transformed into `<script type="WaveDrom">` tags and the WaveDrom JavaScript library processes them on page load.
 
@@ -53,7 +51,7 @@ extra_javascript = [
 [project.markdown_extensions.wavedrom]
 ```
 
-### Embed SVG mode
+#### Embed SVG mode
 
 When `embed_svg = true` is set, WaveDrom diagrams are rendered to SVG at build time. This means no JavaScript is required on the client side.
 
@@ -63,7 +61,7 @@ When `embed_svg = true` is set, WaveDrom diagrams are rendered to SVG at build t
 embed_svg = true
 ```
 
-### Pymdownx Integration
+#### Pymdownx Integration
 
 This plugin integrates with `pymdownx.superfences` to provide custom fence support when `pymdownx` is used instead of `fenced_code`.
 
@@ -75,11 +73,11 @@ custom_fences = [
 [project.markdown_extensions.wavedrom]
 ```
 
-## MkDocs Configuration
+### MkDocs
 
-Since this plugin is registered as a `markdown.extensions` entry point, it also works with [MkDocs](https://www.mkdocs.org/). Here is the equivalent `mkdocs.yml` for each mode shown above.
+Since this plugin is registered as a `markdown.extensions` entry point, it also works with [MkDocs](https://www.mkdocs.org/).
 
-### Default mode
+#### Default mode (MkDocs)
 
 ```yaml
 markdown_extensions:
@@ -91,7 +89,7 @@ extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/wavedrom.min.js
 ```
 
-### Embed SVG mode
+#### Embed SVG mode (MkDocs)
 
 ```yaml
 markdown_extensions:
@@ -99,7 +97,7 @@ markdown_extensions:
       embed_svg: true
 ```
 
-### Pymdownx Integration
+#### Pymdownx Integration (MkDocs)
 
 ```yaml
 markdown_extensions:

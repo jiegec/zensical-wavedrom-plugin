@@ -1,14 +1,16 @@
 # WaveDrom Plugin Demo
 
-Welcome to the **zensical-wavedrom-plugin** demo project! This project demonstrates how to render [WaveDrom](https://wavedrom.com/) digital timing diagrams in your Zensical documentation. Source code of this demo can be found in [the repo](https://github.com/jiegec/zensical-wavedrom-plugin/tree/master/demo).
+Welcome to the **zensical-wavedrom-plugin** demo project! This project demonstrates how to render [WaveDrom](https://wavedrom.com/) digital timing diagrams in your documentation. Source code of this demo can be found in [the repo](https://github.com/jiegec/zensical-wavedrom-plugin/tree/master/demo).
 
-Since this plugin is registered as a `markdown.extensions` entry point, it also works out of the box with [MkDocs](https://www.mkdocs.org/).
+Since this plugin is registered as a `markdown.extensions` entry point, it works with any [Python-Markdown](https://github.com/Python-Markdown/markdown)-based static site generator, including [Zensical](https://github.com/jiegec/zensical) and [MkDocs](https://www.mkdocs.org/).
 
 ## What is WaveDrom?
 
 WaveDrom is a digital timing diagram rendering engine that uses a simple JSON-based format to describe waveforms, bitfields, and registers.
 
-Here are some usage examples:
+## Usage
+
+Write fenced code blocks with language `wavedrom`:
 
 ### Simple Clock and Data
 
@@ -95,7 +97,7 @@ custom_fences = [
 
 Since this plugin is registered as a `markdown.extensions` entry point, it also works with [MkDocs](https://www.mkdocs.org/). Here is the equivalent `mkdocs.yml` for each mode shown above.
 
-### Default Mode
+### Default Mode (MkDocs)
 
 ```yaml
 markdown_extensions:
@@ -107,7 +109,7 @@ extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/wavedrom.min.js
 ```
 
-### Embed SVG Mode
+### Embed SVG Mode (MkDocs)
 
 ```yaml
 markdown_extensions:
@@ -115,7 +117,7 @@ markdown_extensions:
       embed_svg: true
 ```
 
-### Pymdownx Integration
+### Pymdownx Integration (MkDocs)
 
 ```yaml
 markdown_extensions:
