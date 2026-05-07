@@ -20,6 +20,21 @@ Since this plugin is registered as a `markdown.extensions` entry point, it also 
 pip install zensical-wavedrom-plugin
 ```
 
+## Usage
+
+Add wavedrom diagrams to your Markdown files:
+
+````markdown
+```wavedrom
+{ signal: [
+  { name: "clk",  wave: "p....." },
+  { name: "data", wave: "x.345x" }
+] }
+```
+````
+
+Then setup Zensical or Mkdocs according to the instructions below.
+
 ## Zensical Configuration
 
 Add to your `zensical.toml`:
@@ -62,9 +77,9 @@ custom_fences = [
 
 ## MkDocs Configuration
 
-Since this plugin is registered as a `markdown.extensions` entry point, it also works with [MkDocs](https://www.mkdocs.org/).
+Since this plugin is registered as a `markdown.extensions` entry point, it also works with [MkDocs](https://www.mkdocs.org/). Here is the equivalent `mkdocs.yml` for each mode shown above.
 
-### Default mode (MkDocs)
+### Default mode
 
 ```yaml
 markdown_extensions:
@@ -76,7 +91,7 @@ extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/wavedrom.min.js
 ```
 
-### Embed SVG mode (MkDocs)
+### Embed SVG mode
 
 ```yaml
 markdown_extensions:
@@ -84,7 +99,7 @@ markdown_extensions:
       embed_svg: true
 ```
 
-### Pymdownx Integration (MkDocs)
+### Pymdownx Integration
 
 ```yaml
 markdown_extensions:
@@ -100,19 +115,6 @@ extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/skins/default.js
   - https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/wavedrom.min.js
 ```
-
-## Usage
-
-In your Markdown files:
-
-````markdown
-```wavedrom
-{ signal: [
-  { name: "clk",  wave: "p....." },
-  { name: "data", wave: "x.345x" }
-] }
-```
-````
 
 ## License
 
