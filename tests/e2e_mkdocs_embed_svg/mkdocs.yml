@@ -1,0 +1,4 @@
+site_name: e2e-mkdocs-embed-svg
+markdown_extensions:
+  - wavedrom:
+      embed_svg: true

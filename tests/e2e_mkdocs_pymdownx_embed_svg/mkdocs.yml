@@ -1,0 +1,9 @@
+site_name: e2e-mkdocs-pymdownx-embed-svg
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: wavedrom
+          class: wavedrom
+          format: !!python/name:zensical_wavedrom_plugin.extension.fence_wavedrom_format
+  - wavedrom:
+      embed_svg: true
