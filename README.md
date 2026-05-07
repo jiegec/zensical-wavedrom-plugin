@@ -6,6 +6,8 @@ A Zensical extension for rendering [WaveDrom](https://wavedrom.com/) diagrams in
 
 This is a port of the [mkdocs-wavedrom-plugin](https://github.com/kuri65536/mkdocs-wavedrom-plugin) (or, my [maintained fork](https://github.com/jiegec/mkdocs-wavedrom-plugin)) for the Zensical static site generator.
 
+Since this plugin is registered as a `markdown.extensions` entry point, it also works out of the box with [MkDocs](https://www.mkdocs.org/).
+
 ## Features
 
 - Transform fenced code blocks with language `wavedrom` into WaveDrom script tags or embedded SVG
@@ -18,7 +20,7 @@ This is a port of the [mkdocs-wavedrom-plugin](https://github.com/kuri65536/mkdo
 pip install zensical-wavedrom-plugin
 ```
 
-## Configuration
+## Zensical Configuration
 
 Add to your `zensical.toml`:
 
@@ -56,6 +58,47 @@ custom_fences = [
   { name = "wavedrom", class = "wavedrom", format = "zensical_wavedrom_plugin.extension.fence_wavedrom_format" }
 ]
 [project.markdown_extensions.wavedrom]
+```
+
+## MkDocs Configuration
+
+Since this plugin is registered as a `markdown.extensions` entry point, it also works with [MkDocs](https://www.mkdocs.org/).
+
+### Default mode (MkDocs)
+
+```yaml
+markdown_extensions:
+  - wavedrom:
+      embed_svg: false
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/skins/default.js
+  - https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/wavedrom.min.js
+```
+
+### Embed SVG mode (MkDocs)
+
+```yaml
+markdown_extensions:
+  - wavedrom:
+      embed_svg: true
+```
+
+### Pymdownx Integration (MkDocs)
+
+```yaml
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: wavedrom
+          class: wavedrom
+          format: !!python/name:zensical_wavedrom_plugin.extension.fence_wavedrom_format
+  - wavedrom:
+      embed_svg: false
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/skins/default.js
+  - https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.5.0/wavedrom.min.js
 ```
 
 ## Usage
